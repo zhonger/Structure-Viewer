@@ -3,7 +3,7 @@
     "displayName": "Structure Viewer",
     "description": "A VSCode extension for visualizing material structures using NGL.",
     "publisher": "zhonger",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "engines": {
         "vscode": "^1.91.0"
     },

@@ -2,10 +2,13 @@
 
 It's an extension for VSCode to preview material structures directly.
 
-Now it only support ".xyz" or ".extxyz" coordination files.
+It supports:
+
+- ".xyz" or ".extxyz"
+- ".cif"
 
 Next, more formats will be supported:
 
 - ".in" (CONQUEST)
-- ".cif"
+- ".gjf" (Gaussian View)
 - ......
