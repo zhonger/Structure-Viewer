@@ -105,10 +105,19 @@ class StructureViewerPanel {
 </html>`;
     }
     _loadFile(uri) {
+        var _a;
         return __awaiter(this, void 0, void 0, function* () {
             const filePath = uri.fsPath;
+            const extension = (_a = filePath.split('.').pop()) === null || _a === void 0 ? void 0 : _a.toLowerCase();
             const fileContent = yield fs.promises.readFile(filePath, 'utf-8');
-            this._panel.webview.postMessage({ command: 'loadFile', content: fileContent });
+            let message;
+            if (extension === 'xyz' || extension === 'extxyz') {
+                message = { command: 'loadXYZ', content: fileContent };
+            }
+            else if (extension === 'cif') {
+                message = { command: 'loadCIF', content: fileContent };
+            }
+            this._panel.webview.postMessage(message);
         });
     }
 }

@@ -41,7 +41,7 @@
                 {
                     "command": "structureViewer.openFile",
                     "group": "navigation",
-                    "when": "resourceExtname == .xyz"
+                    "when": "resourceExtname == .xyz || resourceExtname == .extxyz || resourceExtname == .cif"
                 }
             ]
         }

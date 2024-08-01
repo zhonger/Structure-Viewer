@@ -120,7 +120,16 @@ class StructureViewerPanel {
 
   private async _loadFile(uri: vscode.Uri) {
     const filePath = uri.fsPath;
+    const extension = filePath.split('.').pop()?.toLowerCase();
     const fileContent = await fs.promises.readFile(filePath, 'utf-8');
-    this._panel.webview.postMessage({ command: 'loadFile', content: fileContent });
+
+    let message;
+    if (extension === 'xyz' || extension === 'extxyz') {
+      message = { command: 'loadXYZ', content: fileContent };
+    } else if (extension === 'cif') {
+      message = { command: 'loadCIF', content: fileContent };
+    }
+
+    this._panel.webview.postMessage(message);
   }
 }
