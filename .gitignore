@@ -1,2 +1,5 @@
 node_modules
 *.vsix
+sha256sum.txt
+test
+.DS_store
